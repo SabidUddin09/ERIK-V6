@@ -199,7 +199,7 @@ elif mode == "Google Scholar Search":
                     r_page = requests.get(r, timeout=3)
                     soup = BeautifulSoup(r_page.text, "html.parser")
                     title = soup.title.string if soup.title else r
-                    snippet = " ".join([p.get_text()[:150]+"..." for p in soup.find_all('p')[:2])
+                    snippet = " ".join([p.get_text()[:150]+"..." for p in soup.find_all('p')[:2]])
                     st.markdown(f"📄 **{title}**\n{snippet}\n🔗 [Read More]({r})")
                 except:
                     st.markdown(f"📄 {r}")
